@@ -2,7 +2,7 @@
 
 // 动态加载 Vue
 const vueScript = document.createElement('script');
-vueScript.src = 'https://unpkg.com/vue@next';
+vueScript.src = 'https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.prod.js'; // 使用具体的版本
 document.head.appendChild(vueScript);
 
 // 等待 Vue 加载完成
@@ -15,21 +15,22 @@ vueScript.onload = () => {
     // 等待 TDesign 加载完成
     tdesignScript.onload = () => {
         // Vue 和 TDesign 都已加载完成，可以创建 Vue 应用了
-        const { createApp } = Vue;
+        const { createApp, ref } = Vue;
 
         // 创建 Vue 应用实例
         const app = createApp({
-            data() {
+            setup() {
+                // 定义响应式变量
+                const 问题 = ref('这是一个示例问题');
+                const Deck = ref('这是一个示例牌组');
+                const Tags = ref(['标签1', '标签2', '标签3']);
+
                 return {
-                    message: 'Hello, TDesign!'
+                    问题,
+                    Deck,
+                    Tags
                 };
-            },
-            template: `
-        <div>
-          <h1>{{ message }}</h1>
-          <t-button variant="base" theme="primary">这是一个 TDesign 按钮</t-button>
-        </div>
-      `
+            }
         });
 
         // 注册 TDesign 组件
