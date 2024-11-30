@@ -3,8 +3,10 @@
     <script src="https://cdn.jsdelivr.net/npm/tdesign-vue-next/dist/tdesign.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tdesign-vue-next/dist/tdesign.min.css">
     <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
-    <link rel="stylesheet" href="main.css" />
-    <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/grantting/my-template/main.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/grantting/my-template/app.js"></script>
+    <!-- <link rel="stylesheet" href="main.css" />
+    <script type="module" src="app.js"></script> -->
 </head>
 
 <div id="app">
@@ -61,7 +63,7 @@
     <div style="margin-top: 12px;"></div>
 
     <!--答案和解析 -->
-    <div v-if="templateType.value == 1" class="verticalCenter">
+    <div v-if="templateType == 1" class="verticalCenter">
         <t-card class="multiline responsive-width" :bordered="false" hoverShadow="false" class="multiline">
             <p>
                 <text v-html="answer" class="extraLargeFontSize"></text>
@@ -87,7 +89,7 @@
         <div ref="parsingField">111</div>
         <div ref="deckNameField">2025/01/01::22</div>
         <div ref="tagsField">13-11</div>
-        <div ref="templateField">1</div>
+        <div ref="templateField">2</div>
         <div ref="isBack">1</div>
     </div>
 </div>

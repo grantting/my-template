@@ -51,7 +51,7 @@ const app = createApp({
             }
 
             const emptyCount = parsingEmptyContentArray.value.length;
-            placeholderUnderline.value = Array(emptyCount).fill(" [***] ");
+            placeholderUnderline.value = Array(emptyCount).fill(" [···] ");
         }
 
         const clickToDisplay = (string) => {
@@ -59,7 +59,7 @@ const app = createApp({
             const num = string.substring(2) - 1
 
             if (placeholderUnderline.value[num] === parsingEmptyContentArray.value[num]) {
-                placeholderUnderline.value[num] = "[ *** ]"
+                placeholderUnderline.value[num] = " [···]"
             } else {
                 if (parsingEmptyContentArray.value[num].match(latexPattern) && parsingEmptyContentArray.value[num].match(latexPattern).length > 0) {
                     setTimeout(console.log('123 :>> ', 123), 0);
