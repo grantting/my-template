@@ -1,0 +1,193 @@
+.extraLargeFontSize {
+    font-size: 17px;
+}
+
+img {
+    background: #fff;
+    opacity: 1;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+}
+
+.t-card__title {
+    font-size: 22px;
+    font-weight: 320;
+}
+
+ol,
+ul,
+pre,
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
+    line-height: 2rem;
+}
+
+
+body {
+    background-color: #F2F2F2;
+}
+
+.multiline {
+    white-space: pre-wrap;
+    /* 保留空格和换行符，并允许文本换行 */
+    word-break: break-all;
+    /* 如果单词过长，则在单词内部断开换行 */
+}
+
+
+.verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.multiline.responsive-width {
+    width: 100%;
+    /* 默认情况下卡片宽度为100% */
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .multiline.responsive-width {
+        width: 60%;
+        /* 如果屏幕的宽度大于高度，则卡片宽度为60% */
+    }
+}
+
+.extraLargeFontSize {
+    font-size: 17px;
+}
+
+img {
+    background: #fff;
+    opacity: 1;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+}
+
+ol,
+ul,
+pre,
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
+    line-height: 2rem;
+}
+
+
+body {
+    background-color: #F2F2F2;
+}
+
+.multiline {
+    white-space: pre-wrap;
+    /* 保留空格和换行符，并允许文本换行 */
+    word-break: break-all;
+    /* 如果单词过长，则在单词内部断开换行 */
+}
+
+
+
+.multiline.responsive-width {
+    width: 100%;
+    /* 默认情况下卡片宽度为100% */
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .multiline.responsive-width {
+        width: 60%;
+        /* 如果屏幕的宽度大于高度，则卡片宽度为60% */
+    }
+}
+
+.littleCircle1 {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4676FF;
+    margin-right: -3px;
+    /* 设置圆圈之间的间距 */
+}
+
+.littleCircle2 {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #BFCFFF;
+    /* margin-right: 8px; */
+    /* 设置圆圈之间的间距 */
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    transition: background-color 0.5s;
+    min-height: 45px;
+    /* 设置最小高度为 40 像素 */
+}
+
+.list-item:hover {
+    background-color: #F5F7FA;
+}
+
+.square,
+.circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #CDD0D6;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    margin-right: 8px;
+    background-color: white;
+    margin-left: 4px;
+    flex-shrink: 0;
+}
+
+.square {
+    border-radius: 3px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.selectedOption {
+    background-color: #0052d9;
+    border: 1px solid #0052d9;
+    color: white;
+}
+
+
+.chooseCorrectly {
+    border: 1px solid #2ba471;
+    background-color: #2ba471;
+    color: white;
+}
+
+.selectionError {
+    border: 1px solid #d54941;
+    background-color: #d54941;
+    color: white;
+}
+
+.missingSelection {
+    border: 1px solid #2ba471;
+    background-color: white;
+    color: #2ba471;
+}

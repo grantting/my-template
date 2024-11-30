@@ -1,0 +1,93 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tdesign-vue-next/dist/tdesign.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tdesign-vue-next/dist/tdesign.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="app.js"></script>
+</head>
+
+<div id="app">
+    <div class="verticalCenter">
+        <t-card class="multiline responsive-width" :bordered="false">
+
+            <div v-if="templateType == 1">
+                <p v-html="question" class="extraLargeFontSize"></p>
+            </div>
+
+            <div v-else-if="templateType == 2">
+
+                <p class="extraLargeFontSize">
+                    <span v-for="(item, index) in completionText" :key="index">
+                        <span v-if="item.match(/^填空\d+$/)">
+                            <text v-html="fillInBlankContent[item.substring(2)-1]"
+                                style="margin-top: 1rem; font-weight: bolder; color: #d54941;"></text>
+                        </span>
+                        <text v-else v-html="item"></text>
+                    </span>
+                </p>
+            </div>
+
+            <p style="margin-top: 24px;">
+                <t-space>
+                    <span v-for="tag in tags" :key="tag">
+                        <t-tag variant="outline">
+                            <span v-html="tag"></span>
+                            <template #icon>
+                                <t-icon name="discount" color="#0052D9"></t-icon>
+                            </template>
+                        </t-tag>
+                    </span>
+                </t-space>
+            </p>
+
+            <template #actions>
+                <t-tag variant="outline">
+                    <template #icon>
+                        <t-icon name="alarm" />
+                    </template>
+                    <p v-html="countdown"></p>
+                </t-tag>
+            </template>
+            <template #title>
+                <t-space size="4px" align="center">
+                    <t-icon name="questionnaire" color="#0052D9"></t-icon>
+                    <span>问题</span>
+                </t-space>
+            </template>
+        </t-card>
+    </div>
+
+    <div style="margin-top: 12px;"></div>
+
+    <!--答案和解析 -->
+    <div v-if="templateType.value == 1" class="verticalCenter">
+        <t-card class="multiline responsive-width" :bordered="false" hoverShadow="false" class="multiline">
+            <p>
+                <text v-html="answer" class="extraLargeFontSize"></text>
+            </p>
+            <div v-if="parsing != ''">
+                <t-divider>解析</t-divider>
+                <p><text v-html="parsing"></text></p>
+            </div>
+
+            <template #title>
+                <t-space size="4px" align="center">
+                    <t-icon name="chat-checked" color="#2ba471"></t-icon>
+                    <span>答案</span>
+                </t-space>
+            </template>
+        </t-card>
+
+    </div>
+
+    <div style="display: none;">
+        <div ref="questionField">123456【1322】</div>
+        <div ref="answerField">111</div>
+        <div ref="parsingField">111</div>
+        <div ref="deckNameField">2025/01/01::22</div>
+        <div ref="tagsField">13-11</div>
+        <div ref="templateField">1</div>
+        <div ref="isBack">1</div>
+    </div>
+</div>
